@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=2.0,user-scalable=1"/>
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<title>HTML 陀螺仪调用</title>
+</head>
+<body>
+	<div class="img" id="img">
+		<span class="imgtxt alpha" id= "alpha">alpha:</span>
+		<span class="imgtxt beta"  id= "beta">beta:</span>
+		<span class="imgtxt gamma" id= "gamma">gamma:</span>
+		<img src="img/tooopen_sy_200676715868.jpg">
+	</div>
+	<script type="text/javascript">
+		(function(){
+			var img =document.getElementById('img');
+			var alphatxt =document.getElementById('alpha');
+			var betatxt =document.getElementById('beta');
+			var gammatxt =document.getElementById('gamma');
+			if(window.DeviceOrientationEvent){
+				window.addEventListener("deviceorientation",function(event){
+					 var alpha = event.alpha,//Z轴
+	                     beta = event.beta,//X轴
+	                     gamma = event.gamma;//Y轴
+
+	                  alphatxt.innerHTML = alpha;   
+	                  betatxt.innerHTML = beta;   
+	                  gammatxt.innerHTML = gamma;   
+                      img.style.webkitTransform = 'rotateX(' + beta+ 'deg) rotateY(' + gamma + 'deg) rotateZ(' + alpha + 'deg)';   
+	                  img.style.transform = 'rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg) rotateZ(' + alpha + 'deg)';
+	                  img.style.mozTransform = 'rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg) rotateZ(' + alpha + 'deg)';
+				});
+			}else{
+				document.getElementsByTagName('body').innerHTML="你的浏览器不支持";
+			}
+		})();
+	</script>
+</body>
+</html>
