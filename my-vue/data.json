@@ -1,8 +1,0 @@
-{  
-    "products": [  
-        { "title": "产品01", "img": "http://baixiong-fe.oss-cn-hangzhou.aliyuncs.com/shop/images/ibx.jpg","" },  
-        { "title": "产品02", "img": "http://baixiong-fe.oss-cn-hangzhou.aliyuncs.com/shop/images/ibx.jpg",},  
-        { "title": "产品03", "img": "http://baixiong-fe.oss-cn-hangzhou.aliyuncs.com/shop/images/hydc.jpg",},  
-        { "title": "产品04", "img": "http://baixiong-fe.oss-cn-hangzhou.aliyuncs.com/shop/images/ibx.jpg",}  
-    ]  
-}  
