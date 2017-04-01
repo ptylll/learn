@@ -26,8 +26,20 @@
       }
 ```
 ##### user-select 禁止用户选中文本
-	```
+```
     div {
         user-select: none; /* Standard syntax */
     }
   ```  
+##### -webkit-font-smoothing 字体抗锯齿
+none                                     ------ 对低像素的文本比较好 
+subpixel-antialiased                ------默认值 
+antialiased                             ------抗锯齿很好 
+ ``` 
+   div {
+        -webkit-font-smoothing: antialiased; 
+    }
+  ```
+##### [background:linear-gradient斜向线性渐变](http://www.jcodecraeer.com/a/cssjiqiaoyuguifan/2012/0811/341.html)
+要创建一个线性渐变，您需要设置一个起点和一个渐变的方向（或角度），并定义起止颜色。
+-moz-linear-gradient( [<point> || <angle>,]? <stop>, <stop> [, <stop>]* )
