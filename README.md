@@ -41,5 +41,7 @@ antialiased                             ------抗锯齿很好
     }
   ```
 ##### [background:linear-gradient斜向线性渐变](http://www.jcodecraeer.com/a/cssjiqiaoyuguifan/2012/0811/341.html)
+
 要创建一个线性渐变，您需要设置一个起点和一个渐变的方向（或角度），并定义起止颜色。
+
 -moz-linear-gradient( [<point> || <angle>,]? <stop>, <stop> [, <stop>]* )
