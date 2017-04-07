@@ -81,6 +81,11 @@ a:hover{
     margin:0; 
 }
 ```
+##### 浏览器内核默认高版本控制
+```
+ <meta name="renderer" content="webkit">
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+```
 ##### git本地代码提交仓库
 
 ```
