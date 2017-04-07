@@ -14,7 +14,10 @@
 |地址 | 地址 |
 | :------------: |:---------------:|
 | [偏门却又实用的 CSS 样式](http://www.ctolib.com/topics-112966.html) | [CSS选择器速查表](http://www.ctolib.com/cheatsheets-css-selector.html) 
-
+### js轮播图插件
+| 地址 | 地址 |
+| :------------------------------: | :---------------------------------------: |
+| [兼容到IE6的轮播](http://www.jq22.com/jquery-info17)|
 ##### 除去input代码点击灰色背
 ```
   * {
