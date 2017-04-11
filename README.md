@@ -167,7 +167,8 @@ $git push -u origin master
     *+background-color:pink; /*  WARNING: Only works in IE7 ? Is it right? */ 
 ```    
 ####### 移动端
-#####1.js根据屏幕宽度动态计算
+
+##### 1.js根据屏幕宽度动态计算
 ```
 !(function(doc, win) {
     var docEle = doc.documentElement,
