@@ -166,7 +166,7 @@ $git push -u origin master
     _background-color:green; /* Only works in IE6 */  
     *+background-color:pink; /*  WARNING: Only works in IE7 ? Is it right? */ 
 ```    
-####### 移动端
+###### 移动端
 
 ##### 1.js根据屏幕宽度动态计算
 ```
