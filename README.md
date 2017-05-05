@@ -274,3 +274,28 @@ $git push -u origin master
  });
  ```
 
+ ##### css 素浮动造成容器的高度坍塌 解决办法
+  ```
+	<Div class="div01">
+		<div class="div02"></div>
+	</Div>
+	.div01{
+		background-color: #ccc;
+		min-height: 50px;
+		padding: 10px;
+	}
+	.div02{
+		height: 100px;
+		width: 100px;
+		padding: 20px;
+		float: left;
+		background-color: #999;
+	}
+	.div01::after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+  ```
+ 
+
