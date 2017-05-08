@@ -315,11 +315,9 @@ $git push -u origin master
 ##### flex 兼容性写法
 
 ```
--webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 1;         /* OLD - Firefox 19- */
-  width: 20%;               /* For old syntax, otherwise collapses. */
-  -webkit-flex: 1;          /* Chrome */
-  -ms-flex: 1;              /* IE 10 */
-  flex: 1;  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 
 ```
