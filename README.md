@@ -336,7 +336,7 @@ contenteditable="false"
 1.
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 3;//行数
 	overflow: hidden;
 	//适用于手机
 2.
