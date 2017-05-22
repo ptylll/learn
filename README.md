@@ -443,3 +443,17 @@ ajax({
 		return arr.join("&");
 	}
 ```
+##### 数组排序 
+```
+function compare(val1,val2){
+	if(val1 < val2){
+		return -1;
+	}else if(val1 >　val2){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+var a =[12,34,5,6,78,9,2,5,5,65,4,99];
+a.sort(compare);
+```
