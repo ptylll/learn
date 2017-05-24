@@ -501,7 +501,7 @@ function imgVerify(file){//图片基本验证
 	}else{
 		if(!(file.files[0].size /1024/1024) > 1){
 
-			alert("上传图片不能超过1兆");
+			alert("上传图片不能超过1M");
 
 			file.value ="";
 
