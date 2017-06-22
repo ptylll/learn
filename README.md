@@ -544,4 +544,5 @@ function imgVerify(file){//图片基本验证
 			console.log(event.currentTarget);
 		}
 	}
+```	
  详见官网（https://cn.vuejs.org/v2/guide/events.html#方法事件处理器）	
