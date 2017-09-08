@@ -573,3 +573,18 @@ demo2: function timeout(ms) {
 	  console.log(value);
 	});
 ```
+### js 验证变量是否为数组 
+
+```
+ var a =[];
+ 
+ Array.isArray(a);//true
+ Object.Prototype.toString.call(a) === '[object Array]';
+ 
+ 综合: 
+ 	if(!Array.isArray){
+		Array.isArray = function(arg){
+			return  Object.Prototype.toString.call(a) === '[object Array]';
+		}
+	}
+ ```
