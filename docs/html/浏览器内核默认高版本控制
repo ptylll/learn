@@ -1,0 +1,6 @@
+
+##### 浏览器内核默认高版本控制
+```
+ <meta name="renderer" content="webkit">
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+```
