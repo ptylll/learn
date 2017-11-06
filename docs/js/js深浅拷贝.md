@@ -25,8 +25,23 @@ function DeepExtend(p,c){
     d:15	
  };
 var {...b} = a;
+a.
 console.log(a);//{b: 12, c: 14, d: 15}
 console.log(b);//{b: 12, c: 14, d: 15}
+
+```
+##### 对象浅拷贝
+
+```
+ var a = {
+    b:12,
+    c:14,
+    d:15	
+ };
+var b = a;
+a.b = 100;
+console.log(a);//{b: 100, c: 14, d: 15}
+console.log(b);//{b: 100, c: 14, d: 15}
 ```
 ##### 数组 深拷贝方法 
 
