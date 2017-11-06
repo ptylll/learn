@@ -1,5 +1,5 @@
 
-##### js深拷贝
+##### js对象深拷贝
 ```
 function DeepExtend(p,c){
 	var c = c || {};
@@ -13,4 +13,9 @@ function DeepExtend(p,c){
 	}
 	return c;
 }	
+```
+##### 数组 深拷贝方法 
+
+1. silce();
+
 ```
