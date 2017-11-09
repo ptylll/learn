@@ -189,4 +189,16 @@ for (let [key, value] of map) {
   [...myMap]
 
  ```
- 
+ 4. 数组 转为 Map
+
+```
+var a =[1,23,4,5,6];
+var b = [9,7,4,4,5];
+var c =[7,"a","d","a","d","a"];
+
+var p = new Map([a,b,c]);
+
+console.log(p.size)//3 
+
+```
+
