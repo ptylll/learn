@@ -10,6 +10,7 @@ set.size //0
 set.constructor // Set(){}//
 
 ```
+
 2.  Set 常见的方法(操作数据)
 
 add(value)：添加某个值，返回Set结构本身。
@@ -73,9 +74,9 @@ entries()返回键值与键名一致
 
 5. Set应用
 
- 5.1 通过与(...)结合除去 重复 
+ 5.1 通过与(...)结合除去 重复; 
   
-  ```
+```
   
      var arr = [1,1,1,2,2,2,3,3,3,4,5,6,7,8];
      var unique = [... new Set(arr)];
@@ -179,6 +180,7 @@ for (let [key, value] of map) {
 
  ```
  3. Map (...)可以把Map结构转化为数组
+ 
  
  ```
  const myMap = new Map()
