@@ -1,4 +1,4 @@
-redux 简单demo 
+#### redux 简单demo 
 ### 安装第三方模块
 
 npm install --save redux
@@ -38,7 +38,7 @@ const onButtonLgAction ={
   type:'BUTTON_LGCLICK'
 }
 
-//reducer
+//reducer  处理逻辑
 const initialState = {
   text:0
 }
