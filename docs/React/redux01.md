@@ -54,7 +54,6 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。
   
 ```
-
   const initialState = { 
     text:0
   }
@@ -101,9 +100,10 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
       }
     }
   ```
+  
   reducers/counter.js
-   
-  ```
+  
+ ```
     export default function counter(state = 0, action) {
        switch (action.type) {
        case 'INCREMENT':
@@ -114,7 +114,7 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
          return state
        }
      }
- ```
+```
 
  
    
