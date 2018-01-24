@@ -118,7 +118,7 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   
   ```
   
-  #### 1.7 <Provider>组件
+  #### 1.7 Provider组件
   
   connect方法生成容器组件以后，需要让容器组件拿到state对象，才能生成 UI 组件的参数。
   Provider组件，可以让容器组件拿到state。
