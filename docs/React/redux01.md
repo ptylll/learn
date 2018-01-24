@@ -85,13 +85,14 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
 ##### 1.3.1 combineReducers
    
    随着应用变得复杂，需要对 reducer 函数 进行拆分，拆分后的每一块独立负责管理 state 的一部分。
-   combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer 调用 createStore。
+   combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer   调用 createStore。
   
   ###### 实例
    
    reducers/todos.js
    
-   ```
+  ```
+  
    export default function todos(state = [], action) {
       switch (action.type) {
       case 'ADD_TODO':
@@ -101,11 +102,12 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
       }
     }
     
-   ```
+  ```
    
    reducers/counter.js
    
    ```
+   
     export default function counter(state = 0, action) {
        switch (action.type) {
        case 'INCREMENT':
@@ -122,6 +124,7 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
    reducers/index.js
    
    ```
+   
    import { combineReducers } from 'redux'
    import todos from './todos'
    import counter from './counter'
@@ -131,11 +134,13 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
      counter
    })
    
+   
    ```
    
    APP.jsx
    
    ```
+   
    import { createStore } from 'redux'
    import reducer from './reducers/index'
 
