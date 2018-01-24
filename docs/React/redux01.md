@@ -1,5 +1,5 @@
-#### redux 简单demo 
-### 安装第三方模块
+### redux 简单demo 
+#### 安装第三方模块
 
 npm install --save redux
 
@@ -7,7 +7,7 @@ npm install --save react-redux
 
 npm install --save react-router
 
-### 实例
+#### 实例
 ```
 import React, { Component } from 'react';  
 import ReactDOM from 'react-dom';  
