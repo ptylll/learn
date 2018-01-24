@@ -1,11 +1,9 @@
 ### redux 简单demo 
 #### 安装第三方模块
 
-npm install --save redux
-
-npm install --save react-redux
-
-npm install --save react-router
+ npm install --save redux <br/>
+ npm install --save react-redux<br/>
+ npm install --save react-router<br/>
 
 #### 1.0 Store 
  Store 保存数据 相当于一个容器（整个项目里只能有一个Store包含所有数据）
@@ -27,6 +25,7 @@ Store对象包含所有数据。如果想得到某个时点的数据，就要对
   import { createStore } from 'redux';
   const store = createStore(fn);
   const state = store.getState();
+  
 ```
 一个State 对应一个View，只要State相同View就相同。
 
@@ -54,8 +53,9 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
 
   Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。
   
-  ```
-  const initialState = { // State的默认值
+```
+
+  const initialState = { 
     text:0
   }
   const reducer = (state = initialState,action) =>{
@@ -79,6 +79,7 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   }
 
   ```
+  
   上面代码 reducer 接收到 `CHANGE_TEXT` `BUTTON_LGCLICK` `BUTTON_LGCLICK` 任意一个Action 以后返回相对应的state
 
 #### 1.4 connect() 
@@ -94,8 +95,45 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   
   #### 1.5 mapStateToProps()
   
+  mapStateToProps是一个函数,建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系.
   
+  ```
+  function mapStateToProps(state){
+     return {text:state.text}
+  }
+  
+  ```
+  #### 1.6 mapDispatchToProps()
+  
+  mapDispatchToProps是connect函数的第二个参数，用来建立 UI 组件的参数到store.dispatch方法的映射。也就是说，它定义了哪些用户的操作应该当作   Action，传给 Store。它可以是一个函数，也可以是一个对象
+  
+  ```
+  function mapDispatchToProps(dispatch){
+    return{
+      onButtonClick:() =>dispatch(buttonClickAction),
+      onChangeText:() =>dispatch(changeTextAction),
+      onButtonLgClick:() =>dispatch(onButtonLgAction),
+    }
+  }
+  
+  ```
+  
+  #### 1.7 <Provider>组件
+  
+  connect方法生成容器组件以后，需要让容器组件拿到state对象，才能生成 UI 组件的参数。
+  Provider组件，可以让容器组件拿到state。
+  
+  ```
+  ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+    ,document.getElementById('root')
+  )
+  
+  ```
 #### 实例
+
 ```
 import React, { Component } from 'react';  
 import ReactDOM from 'react-dom';  
@@ -177,4 +215,10 @@ ReactDOM.render(
   </Provider>
   ,document.getElementById('root')
 )
+
 ```
+
+参考：
+
+* http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html
+* http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html
