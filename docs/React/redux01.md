@@ -6,7 +6,9 @@
  npm install --save react-router<br/>
 
 #### 1.0 Store 
+ 
  Store 保存数据 相当于一个容器（整个项目里只能有一个Store包含所有数据）
+ 
 * Redux 中利用createStore这个函数创建Store <br/> 
 * 维持应用的 state；<br/>
 * 提供 getState() 方法获取 state；<br/>
