@@ -124,6 +124,7 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   Provider组件，可以让容器组件拿到state。
   
   ```
+  
   ReactDOM.render(
     <Provider store={store}>
         <App />
