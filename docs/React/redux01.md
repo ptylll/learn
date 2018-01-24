@@ -91,7 +91,7 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   
    reducers/todos.js
    
- ```
+   ```
     
    export default function todos(state = [], action) {
       switch (action.type) {
@@ -103,10 +103,10 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
     }
     
   ```
+  
+  reducers/counter.js
    
-   reducers/counter.js
-   
-   ```
+  ```
    
     export default function counter(state = 0, action) {
        switch (action.type) {
@@ -118,8 +118,8 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
          return state
        }
      }
-     
-   ```
+
+ ```
  
  
  
