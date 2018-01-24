@@ -82,6 +82,73 @@ Action 描述当前发生的事情。改变 State 的唯一办法，就是使用
   
   上面代码 reducer 接收到 `CHANGE_TEXT` `BUTTON_LGCLICK` `BUTTON_LGCLICK` 任意一个Action 以后返回相对应的state
 
+##### 1.3.1 combineReducers
+   
+   随着应用变得复杂，需要对 reducer 函数 进行拆分，拆分后的每一块独立负责管理 state 的一部分。
+   combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer 调用 createStore。
+  
+  ###### 实例
+   
+   reducers/todos.js
+   
+   ```
+   export default function todos(state = [], action) {
+      switch (action.type) {
+      case 'ADD_TODO':
+        return state.concat([action.text])
+      default:
+        return state
+      }
+    }
+    
+   ```
+   
+   reducers/counter.js
+   
+   ```
+    export default function counter(state = 0, action) {
+       switch (action.type) {
+       case 'INCREMENT':
+         return state + 1
+       case 'DECREMENT':
+         return state - 1
+       default:
+         return state
+       }
+     }
+     
+   ```
+   
+   reducers/index.js
+   
+   ```
+   import { combineReducers } from 'redux'
+   import todos from './todos'
+   import counter from './counter'
+
+   export default combineReducers({
+     todos,
+     counter
+   })
+   
+   ```
+   
+   APP.jsx
+   
+   ```
+   import { createStore } from 'redux'
+   import reducer from './reducers/index'
+
+   let store = createStore(reducer)
+
+   store.dispatch({
+     type: 'ADD_TODO',
+     text: 'Use Redux'
+   })
+   console.log(store.getState())
+
+   ```
+   
 #### 1.4 connect() 
   
   React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connect的意思，就是将这两种组件连起来。
