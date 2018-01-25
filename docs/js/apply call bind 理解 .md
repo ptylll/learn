@@ -106,3 +106,8 @@ var list3 = list2(); //89
 var list4 = list2(1,2,3,4)//[89, 1, 2, 3, 4]
 
 ```
+参考
+
+https://www.cnblogs.com/libin-1/p/6069031.html
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
