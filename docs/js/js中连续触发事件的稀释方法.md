@@ -1,0 +1,50 @@
+
+##### js中连续触发事件的稀释
+
+### 函数节流背后的思想是指某些代码不可以在没有间断的情况下连续重复执行。
+第一次调用函数，创建一个定时器，在指定的时间间隔之后运行代码。
+当第二次调用该函数时，它会清除前一次的定时器并设置另一个。如果前一个定时器已经执行过了，这个操作就没有任何意义。
+然而，如果前一个定时器尚未执行，其实就是将其替换为一个新的定时器。目的是只有在执行函数的请求停止了一段时间之后才执行。
+
+```
+var  demo = {
+    timerId = null;
+    performDemo:function(){
+      console.log('点击')
+    },
+    percess:function(){
+      clearTimeout(this.timerId);
+      var that = this;
+          this.timerId = setTimeout(function(){
+            that.performDemo();
+          },200)
+    }
+}
+
+```
+
+### demo.01
+
+```
+  <button id="add">点击</button>
+    function add(){
+        console.log('1212')
+    }        
+    function throttle(method,context){
+        clearTimeout(method.tId);
+        method.tId = setTimeout(function(){
+            method.call(context);
+        },200)
+    }
+    var adds = document.getElementById('add');
+        adds.addEventListener('click',function(){
+            throttle(add)
+        })
+
+```        
+throttle 函数 表示点击当在200ms以内再次触发add事件时，就删除触发该事件的定时器并重新新建一个触发该事件的定时器
+
+
+### 函数节流
+
+##### 参考链接http://blog.csdn.net/charlene0824/article/details/52080181
