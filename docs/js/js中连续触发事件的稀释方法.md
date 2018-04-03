@@ -47,4 +47,21 @@ throttle 函数 表示点击当在200ms以内再次触发add事件时，就删�
 
 ### 函数节流
 
+        函数节流一般用于监听页面元素滚动，窗口大小改变等高频率触发事件。
+        *函数节流的要点是，声明一个变量当标志位，记录当前代码是否在执行。如果空闲，则可以正常触发方法执行。如果代码正在执行，则取消这次方法执行，直接return
+### demo.01
+
+        ```
+           // 函数防抖
+            var timer = false;
+            document.getElementById("scroll").onscroll = function(){
+                clearTimeout(timer); // 清除未执行的代码，重置回初始化状态
+
+                timer = setTimeout(function(){
+                    console.log("函数防抖");
+                }, 300);
+            };
+            
+        ```
+
 ##### 参考链接http://blog.csdn.net/charlene0824/article/details/52080181
