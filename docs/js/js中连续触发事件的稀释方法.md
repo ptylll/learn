@@ -52,19 +52,16 @@ throttle 函数 表示点击当在200ms以内再次触发add事件时，就删�
         
 ### demo.01
 
+```
+   // 函数防抖
+    var timer = false;
+    document.getElementById("scroll").onscroll = function(){
+        clearTimeout(timer); // 清除未执行的代码，重置回初始化状态
 
-        ```
-           // 函数防抖
-            var timer = false;
-            document.getElementById("scroll").onscroll = function(){
-                clearTimeout(timer); // 清除未执行的代码，重置回初始化状态
-
-                timer = setTimeout(function(){
-                    console.log("函数防抖");
-                }, 300);
-            };
-            
-        ```
-        
+        timer = setTimeout(function(){
+            console.log("函数防抖");
+        }, 300);
+    };       
+```    
 
 ##### 参考链接http://blog.csdn.net/charlene0824/article/details/52080181
