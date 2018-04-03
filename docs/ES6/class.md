@@ -55,6 +55,7 @@ Point.prototype = {
   toValue() {},
 };
 //两者相等
+
 ```
 
 ### 生成类的实例对象的写法，与 ES5 完全一样，也是使用new命令。前面说过，如果忘记加上new，像函数那样调用Class，将会报错
@@ -65,6 +66,7 @@ Point.prototype = {
   }
   var a = Person();//报错
   var a = new Person();//正确
+  
 ```
 
 ### 类表达式
@@ -80,6 +82,7 @@ var a = new People();
 var b = new Person();
     b.getNames();//not defined
 ```
+
 Person只在 Class 的内部代码可用，指代当前类
 
 ### 立即执行函数
@@ -96,6 +99,7 @@ Person只在 Class 的内部代码可用，指代当前类
  }('张三');
  
   People.getNames();//张三
+  
   ```
   
  ### extends继承
@@ -124,6 +128,7 @@ var c = new Child();
 
 //可以调用父类的方法
 c.speakSometing(); // I can speek chinese
+
 ```
 
 ### class 存值取值get() set()
@@ -167,10 +172,12 @@ class People{
 People.getName();//张三
 var a = new People();
     a.getName();// is not a function
+    
 ```
 ###### 父类的静态方法，可以被子类继承。
 
 ```
+
 class Foo {
   static classMethod() {
     return 'hello';
@@ -181,6 +188,7 @@ class Bar extends Foo {
 }
 
 Bar.classMethod() // 'hello'
+
 ```
 ###### 静态方法也是可以从super对象上调用的。
 
@@ -198,6 +206,7 @@ class Bar extends Foo {
 }
 
 Bar.classMethod() // "hello, too"
+
 ```
 
 参考：http://es6.ruanyifeng.com/#docs/class
