@@ -97,11 +97,11 @@ Person只在 Class 的内部代码可用，指代当前类
         console.log(this.name)
      }
  }('张三');
+ 
   People.getNames();//张三
+ ```
   
-  ```
-  
- ### extends继承
+### extends继承
  
  ``` 
  class Parent{
@@ -185,6 +185,7 @@ class Bar extends Foo {
 Bar.classMethod() // 'hello'
 
 ```
+
 ###### 静态方法也是可以从super对象上调用的。
 
 ```
@@ -204,5 +205,5 @@ Bar.classMethod() // "hello, too"
 
 ```
 
-参考：http://es6.ruanyifeng.com/#docs/class
+参考：http://es6.ruanyifeng.com/#docs/class<br/>
 https://segmentfault.com/a/1190000007537173
