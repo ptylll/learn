@@ -294,7 +294,36 @@ mixin就是把一个对象的方法和属性拷贝到另一个对象上，注意
     var js = new JS();
     console.log(js);
 ```
+![](http://ot2pck40x.bkt.clouddn.com/L%5D5B30_IORO%5DC%7BDXR~2%2931Q.png)
 
+mixin 多继承
+```
+  function extend(destClass) {
+    var classes = Array.prototype.slice.call(arguments, 1);
+    for (var i=0; i<classes.length; i++) {
+        var srcClass = classes[i];
+        var srcProto  = srcClass.prototype;
+        var destProto = destClass.prototype;  
+        for (var method in srcProto) {
+            if (!destProto[method]) {
+                destProto[method] = srcProto[method];
+            }
+        }      
+    }
+}
+function Book() {}
+Book.prototype.getName = function() {};
+Book.prototype.setName  = function() {};
 
+function Tech(){}
+Tech.prototype.showTech = function(){};
+
+function JS() {}
+
+extend(JS, Book, Tech);
+var js = new JS();
+console.log(js);
+```
+![](http://ot2pck40x.bkt.clouddn.com/~SZU%28$W1%5B~NRN8_KY6S311V.png)
 参考：http://es6.ruanyifeng.com/#docs/class<br/>
 https://segmentfault.com/a/1190000007537173
