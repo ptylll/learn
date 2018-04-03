@@ -50,7 +50,7 @@ throttle 函数 表示点击当在200ms以内再次触发add事件时，就删�
         函数节流一般用于监听页面元素滚动，窗口大小改变等高频率触发事件。
         函数节流的要点是，声明一个变量当标志位，记录当前代码是否在执行。如果空闲，则可以正常触发方法执行。如果代码正在执行，则取消这次方法执行，直接return
         
-### demo.01
+### demo
 
 ```
    // 函数防抖
@@ -61,6 +61,29 @@ throttle 函数 表示点击当在200ms以内再次触发add事件时，就删�
             console.log("函数防抖");
         }, 300);
     };       
+    
+     document.getElementById('comm').onscroll = function(){
+        console.log('普通函数')
+    }    
+    var timer = false;
+        document.getElementById('throttle').onscroll=function(){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                console.log('函数防抖')
+            },300)
+        }
+
+    var thorttles = true;
+    document.getElementById('debounce').onscroll = function(){
+        if(!thorttles){
+            return
+        }
+        thorttles = false;   
+        setTimeout(function(){
+            console.log('函数节流');
+            thorttles = true;
+        },300)
+    }
 ```
 ![](https://github.com/ptylll/learn/blob/master/docs/img/1522722519.jpg)
 ![](https://github.com/ptylll/learn/blob/master/docs/img/1522723451(1).jpg)
