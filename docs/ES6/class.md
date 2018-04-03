@@ -58,7 +58,7 @@ Point.prototype = {
 
 ```
 
-### 生成类的实例对象的写法，与 ES5 完全一样，也是使用new命令。前面说过，如果忘记加上new，像函数那样调用Class，将会报错
+生成类的实例对象的写法，与 ES5 完全一样，也是使用new命令。前面说过，如果忘记加上new，像函数那样调用Class，将会报错
 
 ```
   class Person{
@@ -100,31 +100,6 @@ Person只在 Class 的内部代码可用，指代当前类
  
   People.getNames();//张三
  ```
-  
-### extends继承
- 
- ``` 
- class Parent{
-    contructor(name,age){
-        class Parent {
-    constructor(name,age){
-        this.name = name;
-        this.age = age;
-    }
-    speakSometing(){
-        console.log("I can speek chinese");
-    }
-}
-class Child extends Parent {//定义子类，继承父类
-    coding(){
-        console.log("coding javascript");
-    }
-}
-var c = new Child();
-//可以调用父类的方法
-c.speakSometing(); // I can speek chinese
-
-```
 
 ### class 存值取值get() set()
 
@@ -204,6 +179,122 @@ class Bar extends Foo {
 Bar.classMethod() // "hello, too"
 
 ```
+### extends继承
+ 
+ ``` 
+ class Parent{
+    contructor(name,age){
+        class Parent {
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    speakSometing(){
+        console.log("I can speek chinese");
+    }
+}
+class Child extends Parent {//定义子类，继承父类
+    coding(){
+        console.log("coding javascript");
+    }
+}
+var c = new Child();
+//可以调用父类的方法
+c.speakSometing(); // I can speek chinese
+
+```
+在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错。这是因为子类实例的构建，是基于对父类实例加工，只有super方法才能返回父类实例。
+
+```
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+class ColorPoint extends Point {
+  constructor(x, y, color) {
+    this.color = color; // ReferenceError
+    super(x, y);
+    this.color = color; // 正确
+  }
+}
+```
+
+### Object.getPrototypeOf()
+
+Object.getPrototypeOf方法可以用来从子类上获取父类。
+```
+Object.getPrototypeOf(ColorPoint) === Point
+
+```
+可以使用这个方法判断，一个类是否继承了另一个类。
+
+### super 
+
+super这个关键字，既可以当作函数使用，也可以当作对象使用。
+
+当函数使用时
+
+```
+class A {}
+
+class B extends A {
+  constructor() {
+    super();
+  }
+}
+```
+
+super作为对象时，在普通方法中，指向父类的原型对象；在静态方法中，指向父类。
+
+```
+class A {
+  p() {
+    return 2;
+  }
+}
+
+class B extends A {
+  constructor() {
+    super();
+    console.log(super.p()); // 2
+  }
+}
+
+let b = new B();
+```
+
+### mixin多继承
+
+mixin就是把一个对象的方法和属性拷贝到另一个对象上，注意这个继承还是有区别的。js是一种只支持单继承的语言，毕竟一个对象只有一个原型，如果想实现多继承，那就简单暴力的把需要继承的父类的所有属性都拷贝到子类上，就是使用mixin啦。
+
+### demo 
+简单的mixin 拷贝某些方法
+
+```
+  function extend(destClass, srcClass, methods) {
+        var srcProto  = srcClass.prototype;
+        var destProto = destClass.prototype ;   
+        for (var i=0; i<methods.length; i++) {
+            var method = methods[i];
+            if (!destProto[method]) {
+                destProto[method] = srcProto[method];
+            }
+        }
+    }
+    function Book() {}
+    Book.prototype.getName = function() {};
+    Book.prototype.setName  = function() {};
+
+    function JS() {}
+
+    extend(JS, Book, ['getName']);
+    var js = new JS();
+    console.log(js);
+```
+
 
 参考：http://es6.ruanyifeng.com/#docs/class<br/>
 https://segmentfault.com/a/1190000007537173
