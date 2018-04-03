@@ -97,7 +97,6 @@ Person只在 Class 的内部代码可用，指代当前类
         console.log(this.name)
      }
  }('张三');
- 
   People.getNames();//张三
   
   ```
@@ -112,20 +111,16 @@ Person只在 Class 的内部代码可用，指代当前类
         this.name = name;
         this.age = age;
     }
-
     speakSometing(){
         console.log("I can speek chinese");
     }
 }
-//定义子类，继承父类
-class Child extends Parent {
+class Child extends Parent {//定义子类，继承父类
     coding(){
         console.log("coding javascript");
     }
 }
-
 var c = new Child();
-
 //可以调用父类的方法
 c.speakSometing(); // I can speek chinese
 
