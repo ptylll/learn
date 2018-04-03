@@ -325,5 +325,7 @@ var js = new JS();
 console.log(js);
 ```
 ![](http://ot2pck40x.bkt.clouddn.com/~SZU%28$W1%5B~NRN8_KY6S311V.png)
+
+
 参考：http://es6.ruanyifeng.com/#docs/class<br/>
 https://segmentfault.com/a/1190000007537173
