@@ -6,23 +6,23 @@
    2. 一旦状态改变，就不会再变，任何时候都可以得到这个结果。
 	
 ```
-demo1:	var promise = new Promise(function(resolve, reject) {
+var promise = new Promise(function(resolve, reject) {
 	  // ... some code
 
-	  if (/* 异步操作成功 */){
-	    resolve(value);
-	  } else {
-	    reject(error);
-	  }
-	});
+  if (/* 异步操作成功 */){
+    resolve(value);
+  } else {
+    reject(error);
+  }
+});
 
-demo2: function timeout(ms) {
-	  return new Promise((resolve, reject) => {
-	    setTimeout(resolve, ms, 'done');
-	  });
-	}
+function timeout(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms, 'done');
+  });
+}
 
-	timeout(100).then((value) => {
-	  console.log(value);
-	});
+timeout(100).then((value) => {
+  console.log(value);
+});
 ```
